@@ -10,8 +10,9 @@ import { getFirestore, collection, addDoc, getDocs, Firestore } from 'firebase/f
 })
 export class AppComponent implements OnInit{
 
-  title = 'testpjt';
+  title = 'Login Sign-in App';
 
+  // dati di configurazione del progetto di firebase
   firebaseConfig = {
     apiKey: "AIzaSyC3DrfI7TdPapV6g295NPPZ85pLAqADt2c",
     authDomain: "testing-for-project-def1c.firebaseapp.com",
@@ -22,8 +23,8 @@ export class AppComponent implements OnInit{
     measurementId: "G-PK9T936MQT"
   };
 
-  app = initializeApp(this.firebaseConfig);
-  db = getFirestore(this.app);
+  app = initializeApp(this.firebaseConfig); // inizializzazione della applicazione
+  db = getFirestore(this.app); // lettura del database
 
   async getUsernames(db: any) {
     const usernamesCol = collection(db, 'users');
